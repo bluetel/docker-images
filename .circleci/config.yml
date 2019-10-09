@@ -19,9 +19,10 @@ jobs:
             docker push bluetel/node-sfdx:${CIRCLE_BUILD_NUM}
 workflows:
   version: 2
-  validate:
-    jobs:
-      - build_image:
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 2 * * *"
           filters:
             branches:
               only:
