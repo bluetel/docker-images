@@ -14,8 +14,9 @@ jobs:
           name: Build docker image
           command: |
             echo ${DOCKER_PASS} | docker login -u ${DOCKER_USERNAME} --password-stdin
-            docker build -t bluetel/node-sfdx:latest
+            docker build -t bluetel/node-sfdx:latest -t bluetel/node-sfdx:${CIRCLE_BUILD_NUM} .
             docker push bluetel/node-sfdx:latest
+            docker push bluetel/node-sfdx:${CIRCLE_BUILD_NUM}
 workflows:
   version: 2
   validate:
