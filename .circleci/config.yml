@@ -1,7 +1,12 @@
 version: 2.1
+executors:
+  openjdk_latest-node:
+    docker:
+      - image: circleci/openjdk:latest-node
 jobs:
   build_image: 
     working_directory: ~/ci_app
+    executor: openjdk_latest-node
     steps:
       - checkout
       - setup_remote_docker
