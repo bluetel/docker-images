@@ -4,7 +4,7 @@ executors:
     docker:
       - image: circleci/openjdk:latest-node
 jobs:
-  build_image: 
+  build_sfdx_node: 
     working_directory: ~/ci_app
     executor: openjdk_latest-node
     steps:
@@ -28,4 +28,4 @@ workflows:
               only:
                 - master
     jobs:
-      - build_image
+      - build_sfdx_node
