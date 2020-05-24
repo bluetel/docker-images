@@ -12,3 +12,5 @@ RUN jq --version
 # Installing SFDX
 RUN npm install sfdx-cli --global --no-save
 RUN sfdx --version
+
+RUN apk add --no-cache bash git openssh
