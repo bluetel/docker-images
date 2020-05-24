@@ -29,3 +29,15 @@ workflows:
                 - master
     jobs:
       - build_sfdx_node
+
+  build:
+    jobs:
+      - hold-build-master:
+          type: approval
+          filters:
+            branches:
+              only:
+                - master
+      - build_sfdx_node:
+          requires:
+            - hold-build-master
