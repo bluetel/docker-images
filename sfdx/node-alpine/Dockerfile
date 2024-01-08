@@ -1,16 +1,14 @@
 FROM node:16-alpine
 
-
-RUN apk add ca-certificates
-
-# Installing JQ
-RUN apk update \
- && apk add jq \
- && rm -rf /var/cache/apk/*
-RUN jq --version
+RUN apk upgrade --no-cache \
+    && apk add --no-cache --upgrade \
+    bash \
+    ca-certificates \
+    curl \
+    git \
+    jq \
+    openssh
 
 # Installing SFDX
 RUN npm i @salesforce/cli --global --no-save
 RUN sfdx --version
-
-RUN apk add --no-cache bash git openssh
