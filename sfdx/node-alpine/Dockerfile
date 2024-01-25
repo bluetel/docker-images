@@ -10,5 +10,5 @@ RUN apk upgrade --no-cache \
     openssh
 
 # Installing SFDX
-RUN npm i @salesforce/cli --global --no-save
+RUN npm i @salesforce/cli@2.24.4 --global --no-save
 RUN sfdx --version
