@@ -7,7 +7,8 @@ RUN apk upgrade --no-cache \
     curl \
     git \
     jq \
-    openssh
+    openssh \
+    openjdk21
 
 # Installing SFDX
 RUN npm i @salesforce/cli --global --no-save
