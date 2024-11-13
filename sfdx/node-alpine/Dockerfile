@@ -28,5 +28,5 @@ RUN npm i --global vlocity --no-save
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-# Puppeteer v23.7.1 works with Chromium 130.
-RUN yarn add puppeteer@23.7.1
+# Puppeteer v23.8.0 works with Chromium 130.
+RUN yarn add puppeteer@23.8.0
