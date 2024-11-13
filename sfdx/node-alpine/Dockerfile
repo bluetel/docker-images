@@ -16,3 +16,6 @@ RUN sfdx --version
 
 # Installing vlocity build tool
 RUN npm i --global vlocity --no-save
+
+# Installing puppeteer
+RUN npm i --global puppeteer --no-save
