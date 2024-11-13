@@ -8,7 +8,15 @@ RUN apk upgrade --no-cache \
     git \
     jq \
     openssh \
-    openjdk21
+    openjdk21 \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    nodejs \
+    yarn
 
 # Installing SFDX
 RUN npm i @salesforce/cli --global --no-save
@@ -17,5 +25,8 @@ RUN sfdx --version
 # Installing vlocity build tool
 RUN npm i --global vlocity --no-save
 
-# Installing puppeteer
-RUN npm i --global puppeteer --no-save
+# Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+# Puppeteer v13.5.0 works with Chromium 100.
+RUN yarn add puppeteer@13.5.0
