@@ -8,10 +8,11 @@ RUN apk upgrade --no-cache \
     git \
     jq \
     openssh \
-    openjdk21
+    openjdk21 \
+    coreutils
 
 # Installing SFDX
-RUN npm i @salesforce/cli@2.68.6 --global --no-save
+RUN npm i @salesforce/cli --global --no-save
 RUN sf --version
 
 # Installing vlocity build tool
