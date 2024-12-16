@@ -12,7 +12,7 @@ RUN apk upgrade --no-cache \
 
 # Installing SFDX
 RUN npm i @salesforce/cli --global --no-save
-RUN sfdx --version
+RUN sf --version
 
 # Installing vlocity build tool
 RUN npm i --global vlocity --no-save
